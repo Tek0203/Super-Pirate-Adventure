@@ -8,7 +8,7 @@
  <tileset firstgid="244" source="../tilesets/platforms.tsx"/>
  <tileset firstgid="252" source="../tilesets/enemies.tsx"/>
  <tileset firstgid="252" source="../tilesets/grass.tsx"/>
- <layer id="9" name="BG" width="40" height="15" visible="0">
+ <layer id="9" name="BG" width="40" height="15">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -27,7 +27,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="12" name="BG details" class="window" visible="0">
+ <objectgroup id="12" name="BG details" class="window">
   <object id="49" name="candle" gid="231" x="1152.5" y="503" width="64" height="64"/>
   <object id="50" name="candle" gid="231" x="1411" y="504.5" width="64" height="64"/>
   <object id="51" name="window" gid="232" x="1560.5" y="424.5" width="64" height="64"/>
@@ -44,7 +44,7 @@
   <object id="62" name="static" gid="242" x="1268.67" y="501.333" width="52" height="178"/>
   <object id="63" name="static" gid="243" x="1094" y="575" width="82" height="98"/>
  </objectgroup>
- <layer id="1" name="Terrain" width="40" height="15" visible="0">
+ <layer id="1" name="Terrain" width="40" height="15">
   <data encoding="csv">
 0,205,206,161,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,161,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -63,7 +63,7 @@
 0,0,0,0,0,13,14,14,14,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="5" name="Platforms" width="40" height="15" visible="0">
+ <layer id="5" name="Platforms" width="40" height="15">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -130,7 +130,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="13" name="Moving Objects" visible="0">
+ <objectgroup id="13" name="Moving Objects">
   <object id="66" name="boat" x="1790.67" y="619.333" width="768" height="38">
    <properties>
     <property name="flip" type="bool" value="true"/>
@@ -186,7 +186,7 @@
   <object id="79" name="skull" gid="53" x="832" y="128" width="64" height="64"/>
   <object id="80" name="skull" gid="53" x="704" y="64" width="64" height="64"/>
  </objectgroup>
- <objectgroup id="6" name="Enemies" visible="0">
+ <objectgroup id="6" name="Enemies">
   <object id="36" name="shell" gid="224" x="192" y="384" width="76" height="46">
    <properties>
     <property name="reverse" type="bool" value="true"/>
