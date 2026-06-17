@@ -22,6 +22,38 @@ class AnimatedSprite(Sprite):
     def update(self, dt):
         self.animate(dt)
 
+class Item(AnimatedSprite):
+    def __init__(self, item_type, pos, frames, groups, data):
+        super().__init__(pos, frames, groups)
+        self.rect.center = pos
+        self.item_type = item_type
+        self.data = data
+
+    def activate(self):
+        if self.item_type == 'gold':
+            self.data.coins += 5
+        if self.item_type == 'silver':
+            self.data.coins += 1
+        if self.item_type == 'diamond':
+            self.data.coins += 20
+        if self.item_type == 'skull':
+            self.data.coins += 50
+        if self.item_type == 'potion':
+            self.data.health += 1
+
+class ParticleEffectSprite(AnimatedSprite):
+    def __init__(self, pos, frames, groups):
+        super().__init__(pos, frames, groups)
+        self.rect.center = pos
+        self.z = Z_LAYERS['fg']
+
+    def animate(self, dt):
+        self.frame_index += self.animation_speed * dt
+        if self.frame_index < len(self.frames):
+            self.image = self.frames[int(self.frame_index)]
+        else:
+            self.kill()
+
 class MovingSprite(AnimatedSprite):
     def __init__(self, frames, groups, start_pos, end_pos, move_dir, speed, flip = False):
         super().__init__(start_pos, frames, groups)
