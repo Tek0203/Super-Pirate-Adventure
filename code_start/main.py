@@ -6,6 +6,7 @@ from support import *
 from data import Data
 from debug import debug
 from ui import UI
+from overworld import Overworld
 
 class Game:
 	def __init__(self):
@@ -17,8 +18,24 @@ class Game:
 
 		self.ui = UI(self.font, self.ui_frames)
 		self.data = Data(self.ui)
-		self.tmx_maps = {0: load_pygame(join('data/levels/omni.tmx'))}
-		self.current_stage = Level(self.tmx_maps[0], self.level_frames, self.data)
+		self.tmx_maps = {
+			0: load_pygame(join('data/levels/0.tmx')),
+			1: load_pygame(join('data/levels/1.tmx')),
+			2: load_pygame(join('data/levels/2.tmx')),
+			3: load_pygame(join('data/levels/3.tmx')),
+			4: load_pygame(join('data/levels/4.tmx')),
+			5: load_pygame(join('data/levels/5.tmx')),}
+		self.tmx_overworld = load_pygame(join('data/overworld/overworld.tmx'))
+		self.current_stage = Level(self.tmx_maps[0], self.level_frames, self.data, self.switch_stage)
+
+	def switch_stage(self, target, unlock = 0):
+		if target == 'level':
+			# self.current_stage = Level()
+			pass
+		else: # overworld
+			# self.current_stage = Overworld()
+			print(target)
+			print(unlock)
 
 	def import_assets(self):
 		self.level_frames = {
@@ -43,11 +60,16 @@ class Game:
 			'cloud_small': import_folder('graphics/level/clouds/small'),
 			'cloud_large': import_image('graphics/level/clouds/large_cloud')
 		}
-
 		self.font = pygame.font.Font(join('graphics/ui/runescape_uf.ttf'), 40)
 		self.ui_frames = {
 			'heart': import_folder('graphics/ui/heart'),
 			'coin': import_folder('graphics/ui/coin')
+		}
+		self.overworld_frames = {
+			'palms': import_folder('graphics/overworld/palm'),
+			'water': import_folder('graphics/overworld/water'),
+			'path': import_folder_dict('graphics/overworld/path'),
+			'icon': import_sub_folders('graphics/overworld/icon')
 		}
 
 	def run(self):

@@ -5,9 +5,10 @@ from groups import AllSprites
 from enemies import Tooth, Shell, Pearl
 
 class Level:
-    def __init__(self, tmx_map, level_frames, data):
+    def __init__(self, tmx_map, level_frames, data, switch_stage):
         self.display_surface = pygame.display.get_surface()
         self.data = data
+        self.switch_stage = switch_stage
 
         # level data
         self.level_width = tmx_map.width * TILE_SIZE
@@ -190,7 +191,7 @@ class Level:
 
         # bottom border
         if self.player.hitbox_rect.bottom > self.level_bottom:
-            print('death')
+            self.switch_stage('overworld', -1)
         
         # success
         if self.player.hitbox_rect.colliderect(self.level_finish_rect):

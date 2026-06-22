@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="42" height="30" tilewidth="64" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="239">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="42" height="30" tilewidth="64" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="239">
  <tileset firstgid="1" source="../tilesets/overworld.tsx"/>
  <tileset firstgid="127" source="../tilesets/map objects.tsx"/>
  <tileset firstgid="134" source="../tilesets/editor_paths.tsx"/>
- <layer id="1" name="main" width="42" height="30">
+ <layer id="1" name="main" width="42" height="30" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -37,7 +37,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="2" name="top" width="42" height="30">
+ <layer id="2" name="top" width="42" height="30" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,9,9,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -113,7 +113,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="6" name="Paths" visible="0">
+ <objectgroup id="6" name="Paths">
   <object id="155" x="1728" y="960">
    <properties>
     <property name="end" type="int" value="4"/>
@@ -155,7 +155,7 @@
    <polygon points="0,0 704,0 704,64 768,64"/>
   </object>
  </objectgroup>
- <objectgroup id="3" name="Objects">
+ <objectgroup id="3" name="Objects" visible="0">
   <object id="1" name="palm" gid="127" x="1049.5" y="847.5" width="100" height="128"/>
   <object id="2" name="palm" gid="127" x="748" y="751" width="100" height="128"/>
   <object id="3" name="palm" gid="127" x="592.25" y="1039.25" width="100" height="128"/>
