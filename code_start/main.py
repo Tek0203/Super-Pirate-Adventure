@@ -19,23 +19,25 @@ class Game:
 		self.ui = UI(self.font, self.ui_frames)
 		self.data = Data(self.ui)
 		self.tmx_maps = {
-			0: load_pygame(join('data/levels/0.tmx')),
+			0: load_pygame(join('data/levels/omni.tmx')),
 			1: load_pygame(join('data/levels/1.tmx')),
 			2: load_pygame(join('data/levels/2.tmx')),
 			3: load_pygame(join('data/levels/3.tmx')),
 			4: load_pygame(join('data/levels/4.tmx')),
 			5: load_pygame(join('data/levels/5.tmx')),}
 		self.tmx_overworld = load_pygame(join('data/overworld/overworld.tmx'))
-		self.current_stage = Level(self.tmx_maps[0], self.level_frames, self.data, self.switch_stage)
+		self.current_stage = Level(self.tmx_maps[self.data.current_level], self.level_frames, self.audio_files, self.data, self.switch_stage)
+		self.bg_music.play(-1)
 
 	def switch_stage(self, target, unlock = 0):
 		if target == 'level':
-			# self.current_stage = Level()
-			pass
+			self.current_stage = Level(self.tmx_maps[self.data.current_level], self.level_frames, self.audio_files, self.data, self.switch_stage)
 		else: # overworld
-			# self.current_stage = Overworld()
-			print(target)
-			print(unlock)
+			if unlock > 0:
+				self.data.unlocked_level = unlock
+			else:
+				self.data.health -= 1
+			self.current_stage = Overworld(self.tmx_overworld, self.data, self.overworld_frames, self.switch_stage)
 
 	def import_assets(self):
 		self.level_frames = {
@@ -72,6 +74,21 @@ class Game:
 			'icon': import_sub_folders('graphics/overworld/icon')
 		}
 
+		self.audio_files = {
+			'coin': pygame.mixer.Sound(join('audio/coin.wav')),
+			'attack': pygame.mixer.Sound(join('audio/attack.wav')),
+			'jump': pygame.mixer.Sound(join('audio/jump.wav')),
+			'damage': pygame.mixer.Sound(join('audio/damage.wav')),
+			'pearl': pygame.mixer.Sound(join('audio/pearl.wav'))
+		}
+		self.bg_music = pygame.mixer.Sound(join('audio/starlight_city.mp3'))
+		self.bg_music.set_volume(0.5)
+
+	def check_game_over(self):
+		if self.data.health <= 0:
+			pygame.quit()
+			sys.exit()
+
 	def run(self):
 		# Main Game Loop
 		while True:
@@ -81,6 +98,7 @@ class Game:
 					pygame.quit()
 					sys.exit()
 
+			self.check_game_over()
 			self.current_stage.run(dt)
 			self.ui.update(dt)
 			pygame.display.update()

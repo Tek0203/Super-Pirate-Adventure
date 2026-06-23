@@ -110,7 +110,7 @@
   <object id="12" name="palm_small" gid="222" x="1095.33" y="277.33" width="80" height="103"/>
   <object id="13" name="palm_small" gid="222" x="1245.33" y="261.33" width="80" height="103"/>
   <object id="14" name="palm_small" gid="222" x="1202" y="287.33" width="80" height="103"/>
-  <object id="15" name="player" gid="223" x="400.806" y="465.778" width="74" height="56"/>
+  <object id="15" name="player" gid="223" x="198.2" y="322.233" width="74" height="56"/>
   <object id="27" name="palm_bg" gid="217" x="768" y="448" width="128" height="128"/>
   <object id="43" name="palm_bg_left" gid="228" x="245" y="562" width="104" height="106"/>
   <object id="44" name="palm_bg_right" gid="229" x="866" y="496" width="104" height="106"/>
