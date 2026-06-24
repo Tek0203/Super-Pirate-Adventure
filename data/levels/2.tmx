@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="64" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="196">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="64" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="197">
  <tileset firstgid="1" source="../tilesets/outside.tsx"/>
  <tileset firstgid="49" source="../tilesets/items.tsx"/>
  <tileset firstgid="54" source="../tilesets/inside.tsx"/>
@@ -281,7 +281,14 @@
     <property name="speed" type="int" value="100"/>
    </properties>
   </object>
-  <object id="195" name="helicopter" x="339.702" y="197.719" width="10" height="320">
+  <object id="195" name="helicopter" x="341.248" y="254.906" width="10" height="320">
+   <properties>
+    <property name="flip" type="bool" value="true"/>
+    <property name="platform" type="bool" value="true"/>
+    <property name="speed" type="int" value="100"/>
+   </properties>
+  </object>
+  <object id="196" name="helicopter" x="925.483" y="251.815" width="10" height="320">
    <properties>
     <property name="flip" type="bool" value="true"/>
     <property name="platform" type="bool" value="true"/>
