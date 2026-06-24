@@ -21,7 +21,7 @@ class Game:
 		self.tmx_maps = {
 			0: load_pygame(join('data/levels/omni.tmx')),
 			1: load_pygame(join('data/levels/1.tmx')),
-			2: load_pygame(join('data/levels/2.tmx')),
+			2: load_pygame(join('data/levels/2.tmx')), 
 			3: load_pygame(join('data/levels/3.tmx')),
 			4: load_pygame(join('data/levels/4.tmx')),
 			5: load_pygame(join('data/levels/5.tmx')),}
